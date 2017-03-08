@@ -7,10 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "baobab": "^2.3.3",
+    "baobab-react": "^2.1.2",
     "react": "15.4.2",
     "react-native": "0.42.0",
-    "baobab": "^2.3.3",
-    "baobab-react": "^2.1.2"
+    "react-native-router-flux": "^3.38.0"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
