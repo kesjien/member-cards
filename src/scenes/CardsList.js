@@ -17,7 +17,7 @@ import Card from '../swipeCards/card';
 import Dimensions from 'Dimensions';
 import styles from './styles';
 
-var SWIPE_THRESHOLD = 120;
+var SWIPE_THRESHOLD = 100;
 
 class SwipeCards extends Component {
   constructor(props) {
