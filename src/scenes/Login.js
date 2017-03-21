@@ -16,13 +16,22 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { branch } from 'baobab-react/higher-order';
+var Auth0Lock = require('react-native-lock');
 
 class Login extends Component {
   render() {
+    var lock = new Auth0Lock({clientId: 'o7ilD3zZmxeJcTlNOkPtBE17Sk1qyA3H', domain: 'kesj.eu.auth0.com'});
+    lock.show({}, (err, profile, token) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      // Authentication worked!
+      console.log('Logged in with Auth0!');
+    });
     return (
        <Image source={require('../../static/images/bg.jpg')} style={styles.backgroundImage}>
          <StatusBar barStyle='light-content'/>
-         <Text>111</Text>
        </Image>
     );
   }
