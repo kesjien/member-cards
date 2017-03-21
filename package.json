@@ -11,6 +11,7 @@
     "baobab-react": "^2.1.2",
     "react": "15.4.2",
     "react-native": "0.42.0",
+    "react-native-lock": "^0.5.0",
     "react-native-router-flux": "^3.38.0"
   },
   "devDependencies": {
