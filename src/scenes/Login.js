@@ -20,7 +20,26 @@ var Auth0Lock = require('react-native-lock');
 
 class Login extends Component {
   render() {
-    var lock = new Auth0Lock({clientId: 'o7ilD3zZmxeJcTlNOkPtBE17Sk1qyA3H', domain: 'kesj.eu.auth0.com'});
+    var lock = new Auth0Lock({clientId: 'o7ilD3zZmxeJcTlNOkPtBE17Sk1qyA3H',
+      domain: 'kesj.eu.auth0.com',
+      style: {
+        ios: {
+primaryButtonNormalColor: '#3F95EA',
+primaryButtonHighlightedColor: '#3F95EA',
+primaryButtonTextColor: '#FFFFFF',
+secondaryButtonBackgroundColor: '#3F95EA',
+secondaryButtonTextColor: '#FFFFFF',
+textFieldTextColor: '#000000',
+titleTextColor: '#FFFFFF',
+screenBackgroundColor: '#297B9A',
+descriptionTextColor: '#a6bebe',
+separatorTextColor: '#a6bebe',
+credentialBoxBorderColor: '#667980',
+credentialBoxSeparatorColor: '#667980',
+credentialBoxBackgroundColor: '#FFFFFF',
+// iconImageName: 'logo_light.png'
+}
+}});
     lock.show({}, (err, profile, token) => {
       if (err) {
         console.log(err);
