@@ -36,7 +36,7 @@ descriptionTextColor: '#a6bebe',
 separatorTextColor: '#a6bebe',
 credentialBoxBorderColor: '#667980',
 credentialBoxSeparatorColor: '#667980',
-credentialBoxBackgroundColor: '#FFFFFF',
+credentialBoxBackgroundColor: '#000',
 // iconImageName: 'logo_light.png'
 }
 }});
