@@ -95,6 +95,7 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         [self.view insertSubview:imageView atIndex:0];
     }
+    
     self.view.backgroundColor = [theme colorForKey:A0ThemeScreenBackgroundColor];
     self.titleView.iconImage = [theme imageForKey:A0ThemeIconImageName];
     self.closeButton.tintColor = [theme colorForKey:A0ThemeSecondaryButtonTextColor];
