@@ -34,7 +34,7 @@ titleTextColor: '#FFFFFF',
 // screenBackgroundColor: '#297B9A',
 descriptionTextColor: '#a6bebe',
 separatorTextColor: '#a6bebe',
-credentialBoxBorderColor: '#3F95EA',
+credentialBoxBorderColor: '#FFFFFF',
 credentialBoxSeparatorColor: '#3F95EA',
 credentialBoxBackgroundColor: '#E4EFF9',
 screenBackgroundImageName: 'bg.jpg'
