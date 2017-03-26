@@ -23,24 +23,23 @@ class Login extends Component {
     var lock = new Auth0Lock({clientId: 'o7ilD3zZmxeJcTlNOkPtBE17Sk1qyA3H',
       domain: 'kesj.eu.auth0.com',
       style: {
-        ios: {
-primaryButtonNormalColor: '#3F95EA',
-primaryButtonHighlightedColor: '#3F95EA',
-primaryButtonTextColor: '#FFFFFF',
-secondaryButtonBackgroundColor: '#3F95EA',
-secondaryButtonTextColor: '#FFFFFF',
-textFieldTextColor: '#FFFFFF',
-titleTextColor: '#FFFFFF',
-// screenBackgroundColor: '#297B9A',
-descriptionTextColor: '#a6bebe',
-separatorTextColor: '#a6bebe',
-credentialBoxBorderColor: '#FFFFFF',
-credentialBoxSeparatorColor: '#3F95EA',
-credentialBoxBackgroundColor: '#E4EFF9',
-screenBackgroundImageName: 'bg.jpg'
-// iconImageName: 'logo_light.png'
-}
-}});
+          ios: {
+            primaryButtonNormalColor: '#3F95EA',
+            primaryButtonHighlightedColor: '#3F95EA',
+            primaryButtonTextColor: '#FFFFFF',
+            secondaryButtonBackgroundColor: '#3F95EA',
+            secondaryButtonTextColor: '#FFFFFF',
+            textFieldTextColor: '#FFFFFF',
+            titleTextColor: '#FFFFFF',
+            descriptionTextColor: '#a6bebe',
+            separatorTextColor: '#a6bebe',
+            credentialBoxBorderColor: '#FFFFFF',
+            credentialBoxSeparatorColor: '#3F95EA',
+            credentialBoxBackgroundColor: '#E4EFF9',
+            screenBackgroundImageName: 'bg.jpg'
+          }
+        }
+      });
     lock.show({}, (err, profile, token) => {
       if (err) {
         console.log(err);
