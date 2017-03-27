@@ -33,8 +33,8 @@ class MemberCards extends Component {
       // backAndroidHandler={this.handleBackAndroid}
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
       <Scene key="root" unmountScenes>
-        <Scene key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} hideNavBar title="Login">
-        </Scene>
+        <Scene key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} hideNavBar title="Login"></Scene>
+        <Scene key="main" component={Src.Scenes.Main} />
       </Scene>
     </Router>
   }

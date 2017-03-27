@@ -46,7 +46,8 @@ class Login extends Component {
         return;
       }
       // Authentication worked!
-      console.log('Logged in with Auth0!');
+      alert('3')
+      Actions.main();
     });
     return (
        <Image source={require('../../static/images/bg.jpg')} style={styles.backgroundImage}>
