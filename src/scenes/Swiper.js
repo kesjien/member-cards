@@ -44,7 +44,6 @@ class SwipeCards extends Component {
   isLiked() {
     Animated.spring(this.state.pan, {
             toValue: {x: -300, y: 0},
-            // delay: 300,
           }).start(
           () => {
             this._goToNextCard();
@@ -54,23 +53,10 @@ class SwipeCards extends Component {
             }).start();
           }
           );
-    // Animated.timing(
-    //   this.state.enter,
-    //   { 
-    //     toValue:  0, 
-    //     delay: 300,
-    //     duretion: 500,
-    //     easing: Easing.linear
-    //   }
-    // ).start(()=>{
-    //   this._goToNextCard();
-    //   this._animateEntrance();
-    // }); 
   }
   isMoved() {
         Animated.spring(this.state.pan, {
             toValue: {x: 300, y: 0},
-            // delay: 300,
           }).start(
           () => {
             this._goToNextCard();
@@ -80,23 +66,10 @@ class SwipeCards extends Component {
             }).start();
           }
           );
-    // Animated.timing(
-    //   this.state.enter,
-    //   { 
-    //     toValue:  0, 
-    //     delay: 300,
-    //     duretion: 500,
-    //     easing: Easing.linear
-    //   }
-    // ).start(()=>{
-    //   this._goToNextCard();
-    //   this._animateEntrance();
-    // }); 
   }
 
   componentDidMount() {
     this.state.enter.setValue(1);
-    // this._animateEntrance();
   }
 
   _animateEntrance() {
@@ -193,22 +166,9 @@ class SwipeCards extends Component {
     let { pan, enter, } = this.state;
     const { height, width } = Dimensions.get('window');
     let [translateX, translateY] = [pan.x, pan.y];
-
-    // let rotate = pan.x.interpolate({inputRange: [-200, 0, 200], outputRange: ["-30deg", "0deg", "30deg"]});
     let opacity = pan.x.interpolate({inputRange: [-140, 0, 140], outputRange: [0.5, 1, 0.5]});
     let scale = enter;
-
     let animatedCardstyles = {transform: [{translateX}, {translateY}, /*{rotate},*/ {scale}], opacity};
-
-    // let yupOpacity = pan.x.interpolate({inputRange: [0, 150], outputRange: [0, 1]});
-    // let yupScale = pan.x.interpolate({inputRange: [0, 150], outputRange: [0.5, 1], extrapolate: 'clamp'});
-    // let animatedYupStyles = {transform: [{scale: yupScale}], opacity: yupOpacity}
-
-    // let nopeOpacity = pan.x.interpolate({inputRange: [-150, 0], outputRange: [1, 0]});
-    // let nopeScale = pan.x.interpolate({inputRange: [-150, 0], outputRange: [1, 0.5], extrapolate: 'clamp'});
-    // let animatedNopeStyles = {transform: [{scale: nopeScale}], opacity: nopeOpacity}
-    // const cardData = [title: this.state.card.title, body: this.state.card.body]
-    // console.log(cardData)
         return (
             <View style={this.props.containerStyle}>
                 { this.state.card
