@@ -29,7 +29,7 @@ class Login extends Component {
             primaryButtonTextColor: '#FFFFFF',
             secondaryButtonBackgroundColor: '#3F95EA',
             secondaryButtonTextColor: '#FFFFFF',
-            textFieldTextColor: '#FFFFFF',
+            textFieldTextColor: '#3F95EA',
             titleTextColor: '#FFFFFF',
             descriptionTextColor: '#a6bebe',
             separatorTextColor: '#a6bebe',

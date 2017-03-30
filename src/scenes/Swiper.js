@@ -13,9 +13,8 @@ import {
 } from 'react-native';
 
 import clamp from 'clamp';
-import Card from '../swipeCards/card';
+import Card from './Card';
 import Dimensions from 'Dimensions';
-// import styles from './styles';
 
 var SWIPE_THRESHOLD = 120;
 
@@ -182,7 +181,7 @@ class SwipeCards extends Component {
       return this.props.renderNoMoreCards();
 
     return (
-      <Defaults.NoMoreCards />
+      <View><Text>No More cards</Text></View>
     )
   }
 

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { Icon, Text, View} from 'native-base';
 import { Image,TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
-import Gallery from '../common/Gallery';
-import FullCard from './fullCard';
-import styles from './styles';
+import FullCard from './FullCard';
+// import styles from './styles';
 export default class Card extends Component {
   constructor() {
     super();
     this.state = {visible: false}
-    this.setFullCardVisible = this.setFullCardVisible.bind(this);
   }
   setFullCardVisible() {
     if (this.state.visible) {
@@ -47,7 +44,6 @@ export default class Card extends Component {
                         {this.props.children.body}
                       </Text>
                     </View>
-                    <Gallery data={this.props.children.photos} />
                   </View>
                 </View>
               </View>

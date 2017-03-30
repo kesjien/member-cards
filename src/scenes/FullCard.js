@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  Container,
-  Content,
-  Title,
-  Icon,
-  Header
-} from 'native-base';
+
 import { Image,TouchableHighlight,TouchableWithoutFeedback,Modal,ScrollView } from 'react-native';
-import Gallery from '../common/Gallery';
-import styles from './styles';
 export default class Card extends Component {
   constructor() {
     super();
@@ -52,7 +42,6 @@ export default class Card extends Component {
                         {this.props.children.body}
                       </Text>
                     </View>
-                    <Gallery data={this.props.children.photos} />
                   </View>
                 </Content>
               </Container>
