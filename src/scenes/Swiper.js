@@ -11,11 +11,11 @@ import {
     PanResponder,
     Image
 } from 'react-native';
-
+import { connect } from 'react-redux';
 import clamp from 'clamp';
 import Card from './Card';
 import Dimensions from 'Dimensions';
-
+import { fetchPosts } from '../actions/post';
 var SWIPE_THRESHOLD = 120;
 
 class SwipeCards extends Component {
@@ -163,6 +163,7 @@ class SwipeCards extends Component {
   }
 
   render() {
+    console.log(this.props)
     let { pan, enter, } = this.state;
     const { height, width } = Dimensions.get('window');
     let [translateX, translateY] = [pan.x, pan.y];
@@ -290,5 +291,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   }
 })
+function bindAction(dispatch) {
+  return {
+    fetchPosts: () => dispatch(fetchPosts()),
+    syncPosts: () => dispatch(syncPosts())
+  };
+}
 
-export default SwipeCards
+function mapStateToProps(state) {
+  return {
+    name: state.user.name,
+    posts: state.posts,
+    list: state.list.list,
+  };
+}
+export default connect(mapStateToProps, bindAction)(SwipeCards);
+// export default SwipeCards

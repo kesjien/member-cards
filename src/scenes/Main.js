@@ -10,7 +10,6 @@ import Swiper from './Swiper';
 import FirebaseConfig from '../configs/firebase_config.js';
 import firebase from 'firebase';
 import configureStore from '../stores/configure.store.js'
-import { fetchPosts } from '../actions/post';
 
 class Main extends Component {
   constructor() {
@@ -22,16 +21,7 @@ class Main extends Component {
       store: configureStore(() => this.setState({ isLoading: false })),
     };
   }
-  bindAction(dispatch) {
-    return {
-      fetchPosts: () => dispatch(fetchPosts()),
-      syncPosts: () => dispatch(syncPosts())
-    };
-  }
-  render() {
-    this.state.store.dispatch(fetchPosts());
-  
-    console.log(this.state)
+  render() {  
     return (
       <Provider store={this.state.store}>
         <Swiper />
