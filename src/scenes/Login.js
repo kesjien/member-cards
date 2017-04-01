@@ -40,13 +40,13 @@ class Login extends Component {
           }
         }
       });
+    
     lock.show({}, (err, profile, token) => {
       if (err) {
         console.log(err);
         return;
       }
       // Authentication worked!
-      alert('3')
       Actions.main();
     });
     return (

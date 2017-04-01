@@ -1,13 +1,14 @@
 
-import { takeEvery } from 'redux-saga';
-import { call, put, fork, select } from 'redux-saga/effects';
+import { call, put, fork, select, takeEvery } from 'redux-saga/effects';
 import * as actions from '../actions/post.js';
 import { getFormData, getId } from '../reducers/post.js';
 import { getAll, get, create, push, remove, update, sync, CHILD_ADDED, CHILD_REMOVED } from 'firebase-saga';
 
 function* fetchPosts() {
     try {
+        alert('1')
         const posts = yield call(getAll, 'posts');
+        alert('3')
         yield put(actions.postsReceived(posts));
     }
     catch (error) {

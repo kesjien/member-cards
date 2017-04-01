@@ -7,21 +7,31 @@ import {
 import { Actions } from 'react-native-router-flux';
 import { branch } from 'baobab-react/higher-order';
 import Swiper from './Swiper';
-import FirebaseCongif from '../configs/firebase_config.js';
-import Firebase from 'firebase';
-import ConfigureStore from '../stores/configure.store.js'
+import FirebaseConfig from '../configs/firebase_config.js';
+import firebase from 'firebase';
+import configureStore from '../stores/configure.store.js'
+import { fetchPosts } from '../actions/post';
 
 class Main extends Component {
   constructor() {
     super();
-    global.firebase = Firebase;
-    Firebase.initializeApp(FirebaseConfig);
+    global.firebase = firebase;
+    firebase.initializeApp(FirebaseConfig);
     this.state = {
       isLoading: false,
       store: configureStore(() => this.setState({ isLoading: false })),
     };
   }
+  bindAction(dispatch) {
+    return {
+      fetchPosts: () => dispatch(fetchPosts()),
+      syncPosts: () => dispatch(syncPosts())
+    };
+  }
   render() {
+    this.state.store.dispatch(fetchPosts());
+  
+    console.log(this.state)
     return (
       <Provider store={this.state.store}>
         <Swiper />
