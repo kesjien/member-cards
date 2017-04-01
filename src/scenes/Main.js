@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import { 
   Text,
   View, 
@@ -8,18 +9,23 @@ import { branch } from 'baobab-react/higher-order';
 import Swiper from './Swiper';
 import FirebaseCongif from '../configs/firebase_config.js';
 import Firebase from 'firebase';
+import ConfigureStore from '../stores/configure.store.js'
 
 class Main extends Component {
   constructor() {
     super();
-    Firebase.initializeApp(FirebaseConfig)
+    global.firebase = Firebase;
+    Firebase.initializeApp(FirebaseConfig);
+    this.state = {
+      isLoading: false,
+      store: configureStore(() => this.setState({ isLoading: false })),
+    };
   }
   render() {
-
     return (
-      <View>
+      <Provider store={this.state.store}>
         <Swiper />
-      </View>
+      </Provider>
     )
   }
 }
