@@ -6,11 +6,11 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { branch } from 'baobab-react/higher-order';
-import Swiper from './Swiper';
+import CardsProvider from './CardsProvider';
 import FirebaseConfig from '../configs/firebase_config.js';
 import firebase from 'firebase';
 import configureStore from '../stores/configure.store.js'
-
+import { fetchPosts } from '../actions/post';
 class Main extends Component {
   constructor() {
     super();
@@ -21,10 +21,10 @@ class Main extends Component {
       store: configureStore(() => this.setState({ isLoading: false })),
     };
   }
-  render() {  
+  render() {
     return (
       <Provider store={this.state.store}>
-        <Swiper />
+        <CardsProvider />
       </Provider>
     )
   }
