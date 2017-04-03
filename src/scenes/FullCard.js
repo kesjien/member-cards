@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
-import { Image,TouchableHighlight,TouchableWithoutFeedback,Modal,ScrollView } from 'react-native';
+import { Image,TouchableHighlight,TouchableWithoutFeedback,Modal,ScrollView ,StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  Container,
+  Content,
+  Title,
+  Icon,
+  Header
+} from 'native-base';
 export default class Card extends Component {
   constructor() {
     super();
@@ -46,12 +55,46 @@ export default class Card extends Component {
                 </Content>
               </Container>
               </ScrollView>
-              <View style={{marginLeft: 10, marginRight: 10, flexDirection: 'row'}}>
-                <Icon style={{flex: 0.4, color: "#4F8EF7"}} onPress={this.isLikedOnModal} name="ios-heart-outline" />
-                <Icon style={{flex: 0.4, color: "#60938a"}} name="ios-chatboxes-outline" />
-                <Icon style={{color: "#4F8EF7"}} onPress={this.isMovedOnModal} name="ios-paper-outline" />
-              </View>
       </Modal>
     )
   }
 }
+const styles = StyleSheet.create({
+  mainContainer: {
+    margin: 20,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  name: {
+    flex: 0.4
+  },
+  companyName: {
+    alignSelf: 'stretch'
+  },
+  location: {
+    fontSize: 12,
+    alignSelf: 'stretch',
+    fontFamily: 'HelveticaNeue-Light'
+  },
+  headSection: {
+    borderBottomColor: '#d6d7da',
+    paddingBottom: 15,
+    borderBottomWidth: 2
+  },
+  title: {
+    marginTop: 40
+  },
+  body: {
+    marginTop: 20
+  },
+  image: {
+    width: 300,
+    height: 300
+  },
+  card: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+})
