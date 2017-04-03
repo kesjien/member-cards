@@ -291,19 +291,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   }
 })
-function bindAction(dispatch) {
-  return {
-    fetchPosts: () => dispatch(fetchPosts()),
-    syncPosts: () => dispatch(syncPosts())
-  };
-}
+// function bindAction(dispatch) {
+//   return {
+//     fetchPosts: () => dispatch(fetchPosts()),
+//     syncPosts: () => dispatch(syncPosts())
+//   };
+// }
 
-function mapStateToProps(state) {
-  return {
-    name: state.user.name,
-    posts: state.posts,
-    list: state.list.list,
-  };
-}
-export default connect(mapStateToProps, bindAction)(SwipeCards);
-// export default SwipeCards
+// function mapStateToProps(state) {
+//   return {
+//     name: state.user.name,
+//     posts: state.posts,
+//     list: state.list.list,
+//   };
+// }
+// export default connect(mapStateToProps, bindAction)(SwipeCards);
+export default SwipeCards

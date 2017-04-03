@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import firebase from 'firebase';
 import Dimensions from 'Dimensions';
 
-// import NoItems from '../common/NoItemContentMsg';
+import NoItems from '../common/NoItemContentMsg';
 // import myTheme from '../../themes/base-theme';
 import { syncPosts, fetchPosts } from '../actions/post';
 import Swiper from './Swiper';
@@ -61,7 +61,7 @@ class CardsProvider extends Component {
     const mainContent = this.state.page === 'home' ? swiper : (<Text>Not A Home</Text>);
 
     return (
-      <View style={{ flex: 1 }} theme={myTheme} >
+      <View style={{ flex: 1 }} >
         <View style={{ flex: 1 }}>
           {mainContent}
         </View>

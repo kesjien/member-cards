@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image,TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
+import { Image,TouchableHighlight, TouchableWithoutFeedback, View, StyleSheet, Text, Icon } from 'react-native';
 import FullCard from './FullCard';
 // import styles from './styles';
 export default class Card extends Component {
@@ -15,6 +15,7 @@ export default class Card extends Component {
     }
   }
   render() {
+    console.log(this.props)
     return (
       <TouchableWithoutFeedback onPress={this.setFullCardVisible}>
         <View>
@@ -47,11 +48,6 @@ export default class Card extends Component {
                   </View>
                 </View>
               </View>
-              <View style={{marginLeft: 10, marginRight: 10, flexDirection: 'row'}}>
-                <Icon style={{flex: 0.4, color: "#4F8EF7"}} onPress={this.props.isLiked} name="ios-heart-outline" />
-                <Icon style={{flex: 0.4, color: "#4F8EF7"}} name="ios-chatboxes-outline" />
-                <Icon style={{color: "#4F8EF7"}} onPress={this.props.isMoved} name="ios-paper-outline" />
-              </View>
           </View>
           <FullCard 
             isLiked={this.props.isLiked}
@@ -63,3 +59,43 @@ export default class Card extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    margin: 20,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  name: {
+    flex: 0.4
+  },
+  companyName: {
+    alignSelf: 'stretch'
+  },
+  location: {
+    fontSize: 12,
+    alignSelf: 'stretch',
+    fontFamily: 'HelveticaNeue-Light'
+  },
+  headSection: {
+    borderBottomColor: '#d6d7da',
+    paddingBottom: 15,
+    borderBottomWidth: 2
+  },
+  title: {
+    marginTop: 40
+  },
+  body: {
+    marginTop: 20
+  },
+  image: {
+    width: 300,
+    height: 300
+  },
+  card: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+})
