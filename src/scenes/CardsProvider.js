@@ -4,9 +4,7 @@ import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
 import Dimensions from 'Dimensions';
-
 import NoItems from '../common/NoItemContentMsg';
-// import myTheme from '../../themes/base-theme';
 import { syncPosts, fetchPosts } from '../actions/post';
 import Swiper from './Swiper';
 import Card from './Card';

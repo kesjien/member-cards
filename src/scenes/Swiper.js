@@ -163,7 +163,6 @@ class SwipeCards extends Component {
   }
 
   render() {
-    console.log(this.props)
     let { pan, enter, } = this.state;
     const { height, width } = Dimensions.get('window');
     let [translateX, translateY] = [pan.x, pan.y];
@@ -254,7 +253,7 @@ SwipeCards.defaultProps = {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    margin: 20,
+    margin: 60,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
@@ -291,19 +290,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   }
 })
-// function bindAction(dispatch) {
-//   return {
-//     fetchPosts: () => dispatch(fetchPosts()),
-//     syncPosts: () => dispatch(syncPosts())
-//   };
-// }
-
-// function mapStateToProps(state) {
-//   return {
-//     name: state.user.name,
-//     posts: state.posts,
-//     list: state.list.list,
-//   };
-// }
-// export default connect(mapStateToProps, bindAction)(SwipeCards);
 export default SwipeCards

@@ -15,12 +15,11 @@ export default class Card extends Component {
     }
   }
   render() {
-    console.log(this.props)
     return (
       <TouchableWithoutFeedback onPress={this.setFullCardVisible}>
         <View>
           <View style={[this.props.stylesCard, {width: 0.9 * this.props.width, 
-            height: 0.85 * this.props.height, 
+            height: 0.85 * this.props.height, marginTop: 40, marginBottom: 40,
             borderRadius: 8,  borderWidth: 1.5, borderColor: '#d6d7da', backgroundColor: '#fff'}]}>
               <View style={styles.mainContainer}>
                 <View>
