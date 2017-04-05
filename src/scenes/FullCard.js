@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 
-import { Image,TouchableHighlight,TouchableWithoutFeedback,Modal,ScrollView ,StyleSheet} from 'react-native';
-import {
-  View,
-  Text,
-  Container,
-  Content,
-  Title,
-  Icon,
-  Header
-} from 'native-base';
+import { Image, TouchableHighlight, TouchableWithoutFeedback, Modal, ScrollView, StyleSheet, Text, View } from 'react-native';
 export default class Card extends Component {
   constructor() {
     super();
@@ -28,8 +19,8 @@ export default class Card extends Component {
     return (
       <Modal visible={this.props.visible} animationType={'fade'}>
           <ScrollView style={this.props.stylesCard}>
-              <Container style={styles.mainContainer}>
-                <Content>
+              <View>
+                <View>
                   <View style={styles.headSection}>
                     <View style={{flexDirection: 'row'}}>
                         <Text style={styles.name}>Ivan Dorohov</Text>
@@ -52,8 +43,8 @@ export default class Card extends Component {
                       </Text>
                     </View>
                   </View>
-                </Content>
-              </Container>
+                </View>
+              </View>
               </ScrollView>
       </Modal>
     )

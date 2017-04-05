@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -28,9 +22,6 @@ class MemberCards extends Component {
   }
   render() {
     return <Router
-      // onBackAndroid={() => this.onBackAndroid()}
-      // onExitApp={() => this.onExitApp()}
-      // backAndroidHandler={this.handleBackAndroid}
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
       <Scene key="root" unmountScenes>
         <Scene key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} hideNavBar title="Login"></Scene>
@@ -45,7 +36,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,

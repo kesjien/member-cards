@@ -45,7 +45,6 @@ class CardsProvider extends Component {
           <Card
             width={width}
             height={height}
-            stylesCard={styles.card}
             data={cardData}
           />
         )}
@@ -87,11 +86,6 @@ const styles = StyleSheet.create({
   },
   mt: {
     marginTop: 20,
-  },
-  card: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   cardContainer: {
     flex: 1,

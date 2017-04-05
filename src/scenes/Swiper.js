@@ -170,14 +170,13 @@ class SwipeCards extends Component {
     let scale = enter;
     let animatedCardstyles = {transform: [{translateX}, {translateY}, /*{rotate},*/ {scale}], opacity};
         return (
-            <View style={this.props.containerStyle}>
+            <Image source={require('../../static/images/bg.jpg')} style={styles.backgroundImage}>
                 { this.state.card
                     ? (
                     <Animated.View style={[this.props.cardStyle, animatedCardstyles]} {...this._panResponder.panHandlers}>
                       <Card
                         width={width}
                         height={height}
-                        stylesCard={styles.card}
                         // data={this.state.card}
                         isLiked={this.isLiked}
                         isMoved={this.isMoved}
@@ -219,7 +218,7 @@ class SwipeCards extends Component {
                     )
                 }
 
-            </View>
+            </Image>
     );
   }
 }
@@ -252,6 +251,16 @@ SwipeCards.defaultProps = {
 };
 
 const styles = StyleSheet.create({
+    backgroundImage: {
+    flex: 1,
+    height: undefined,
+    width: undefined,
+    // marginTop: 20,
+    resizeMode: 'cover', // or 'stretch'
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   mainContainer: {
     margin: 60,
     flex: 1,

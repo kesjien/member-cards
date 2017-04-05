@@ -18,7 +18,7 @@ export default class Card extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.setFullCardVisible}>
         <View>
-          <View style={[this.props.stylesCard, {width: 0.9 * this.props.width, 
+          <View style={[this.stylesCard, {opacity:0.6,width: 0.9 * this.props.width, 
             height: 0.85 * this.props.height, marginTop: 40, marginBottom: 40,
             borderRadius: 8,  borderWidth: 1.5, borderColor: '#d6d7da', backgroundColor: '#fff'}]}>
               <View style={styles.mainContainer}>
@@ -35,12 +35,12 @@ export default class Card extends Component {
                   </View>
                   <View style={styles.bodySection}>
                     <View style={styles.title}>
-                      <Text numberOfLines={2} style={{fontFamily: 'HelveticaNeue-Medium'}}>
+                      <Text style={{fontFamily: 'HelveticaNeue-Medium'}}>
                         {this.props.children.title}
                       </Text>
                     </View>
                     <View style={styles.body}>
-                      <Text numberOfLines={10} style={{fontFamily: 'HelveticaNeue-Light'}}>
+                      <Text style={{fontFamily: 'HelveticaNeue-Light'}}>
                         {this.props.children.body}
                       </Text>
                     </View>
@@ -93,6 +93,11 @@ const styles = StyleSheet.create({
     height: 300
   },
   card: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  stylesCard: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
