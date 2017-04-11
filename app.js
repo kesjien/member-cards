@@ -11,18 +11,17 @@ import { Scene, Router, TabBar, Modal, Schema, Actions, Reducer, ActionConst } f
 class TabIcon extends React.Component {
     render(){
         return (
-            <Text style={{color: this.props.selected ? 'yellow' :'black'}}>{this.props.title}</Text>
+            <Text style={{color: this.props.selected ? '#3F95EA' :'black'}}>{this.props.title}</Text>
         );
     }
 }
-const RouterWithRedux = connect()(Router);
 class MemberCards extends Component {
   render() {
     return <Router
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
       <Scene key="root">
         <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
-        <Scene key="tabbar" tabs={true}>
+        <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
           <Scene key="main" initial={true}
             hideNavBar={true}
             title="Main"
