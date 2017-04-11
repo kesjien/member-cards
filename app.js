@@ -11,42 +11,41 @@ import { Scene, Router, TabBar, Modal, Schema, Actions, Reducer, ActionConst } f
 class TabIcon extends React.Component {
     render(){
         return (
-            <Text style={{color: this.props.selected ? 'red' :'black'}}>{this.props.title}</Text>
+            <Text style={{color: this.props.selected ? 'yellow' :'black'}}>{this.props.title}</Text>
         );
     }
 }
+const RouterWithRedux = connect()(Router);
 class MemberCards extends Component {
   render() {
     return <Router
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
-      <Scene key="root" unmountScenes>
-        <Scene key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} hideNavBar title="Login"></Scene>
-        <Scene key="tabbar" tabs={true} >
-          <Scene key="main" title="Tab #1" icon={TabIcon} navigationBarStyle={{backgroundColor:'red'}} titleStyle={{color:'white'}}>
-            <Scene key="tab1_1" component={Src.Scenes.Main} title="Tab #1_1" onRight={()=>alert("Right button")} rightTitle="Right" />
-          </Scene>
+      <Scene key="root">
+        <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
+        <Scene key="tabbar" tabs={true}>
+          <Scene key="main" initial={true}
+            hideNavBar={true}
+            title="Main"
+            icon={TabIcon}
+            component={Src.Scenes.Main}
+          />
+          <Scene key="main" initial={true}
+            hideNavBar={true}
+            title="List"
+            icon={TabIcon}
+            component={Src.Scenes.Main}
+          />
+          <Scene key="main" initial={true}
+            hideNavBar={true}
+            title="Actions"
+            icon={TabIcon}
+            component={Src.Scenes.Main}
+          />
         </Scene>
       </Scene>
     </Router>
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 export default MemberCards;
 

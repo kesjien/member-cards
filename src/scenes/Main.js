@@ -9,7 +9,6 @@ import CardsProvider from './CardsProvider';
 import FirebaseConfig from '../configs/firebase_config.js';
 import firebase from 'firebase';
 import configureStore from '../stores/configure.store.js'
-import { fetchPosts } from '../actions/post';
 class Main extends Component {
   constructor() {
     super();
