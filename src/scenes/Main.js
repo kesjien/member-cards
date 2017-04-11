@@ -5,7 +5,6 @@ import {
   View, 
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { branch } from 'baobab-react/higher-order';
 import CardsProvider from './CardsProvider';
 import FirebaseConfig from '../configs/firebase_config.js';
 import firebase from 'firebase';
@@ -30,4 +29,4 @@ class Main extends Component {
   }
 }
 
-export default branch({ devMode: 'isDevMode' }, Main);
+export default Main;

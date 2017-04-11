@@ -15,7 +15,6 @@ import {
   StyleSheet 
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { branch } from 'baobab-react/higher-order';
 var Auth0Lock = require('react-native-lock');
 
 class Login extends Component {
@@ -84,4 +83,4 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-export default branch({ devMode: 'isDevMode' }, Login);
+export default Login;

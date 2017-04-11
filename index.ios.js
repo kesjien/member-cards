@@ -5,9 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { branch, root } from 'baobab-react/higher-order';
 import App from './app';
-import Tree from './tree';
 import {
   AppRegistry,
   StyleSheet,
@@ -21,5 +19,5 @@ const MemberCards = React.createClass({
   }
 });
 
-AppRegistry.registerComponent('MemberCards', () => root(Tree, MemberCards));
+AppRegistry.registerComponent('MemberCards', () => MemberCards);
 
