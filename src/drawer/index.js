@@ -3,13 +3,12 @@ import { StatusBar, Alert, Platform, AppState, InteractionManager } from 'react-
 import Drawer from './react-native-drawer';
 import SideMenu from './SideMenu';
 import { Actions, ActionConst, DefaultRenderer } from 'react-native-router-flux';
-import dismissKeyboard from 'dismissKeyboard'
 
+import dismissKeyboard from 'dismissKeyboard'
 class DrawerComponent extends Component {
     constructor( props ) {
         super( props );
-        this.state = { active: 'dashboard', menuTypeIcon: true, logoff: false };
-        this. = this.toggleMenuView.bind(this);
+        this.state = { active: 'dashboard', menuTypeIcon: true, logoff: false, open: false };
         this.onClickItem = this.onClickItem.bind(this);
         this.logout = this.logout.bind(this);
     }
@@ -35,14 +34,13 @@ class DrawerComponent extends Component {
             <Drawer
                 ref={(ref) => this._drawer = ref}
                 open={this.state.open || state.open}
-                onOpenStart={() => this.onDrawerOpen()}
                 type="displace"
                 content={<SideMenu
                     active={this.state.active} menuTypeIcon={this.state.menuTypeIcon}
                     closeDrawer={() => this.closeDrawer()}
                     onClick={this.onClickItem} />}
                 tapToClose={true}
-                initializeOpen={true}
+                initializeOpen={false}
                 openDrawerOffset={0.175}
                 tweenDuration={500}
                 useInteractionManager={true}

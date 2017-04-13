@@ -46,7 +46,7 @@ class Login extends Component {
         return;
       }
       // Authentication worked!
-      Actions.tabbar();
+      Actions.drawer();
     });
     return (
        <Image source={require('../../static/images/bg.jpg')} style={styles.backgroundImage}>
