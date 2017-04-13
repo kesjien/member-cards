@@ -7,6 +7,8 @@ import {
   Platform
 } from 'react-native';
 import Src from './src';
+import Drawer from './src/drawer';
+import NavBar from './src/drawer/NavBar';
 import { Scene, Router, TabBar, Modal, Schema, Actions, Reducer, ActionConst } from 'react-native-router-flux'
 class TabIcon extends React.Component {
     render(){
@@ -20,26 +22,28 @@ class MemberCards extends Component {
     return <Router
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
       <Scene key="root">
-        <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
-        <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
-          <Scene key="main" initial={true}
-            hideNavBar={true}
-            title="Main"
-            icon={TabIcon}
-            component={Src.Scenes.Main}
-          />
-          <Scene key="main" initial={true}
-            hideNavBar={true}
-            title="List"
-            icon={TabIcon}
-            component={Src.Scenes.Main}
-          />
-          <Scene key="main" initial={true}
-            hideNavBar={true}
-            title="Actions"
-            icon={TabIcon}
-            component={Src.Scenes.Main}
-          />
+        <Scene key="drawer" type={ActionConst.REPLACE} hideNavBar={false} component={Drawer} open={false}>
+          <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
+          <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
+            <Scene key="main" initial={true}
+              // hideNavBar={true}
+              title="Main"
+              icon={TabIcon}
+              component={Src.Scenes.Main}
+            />
+            <Scene key="main" initial={true}
+              // hideNavBar={true}
+              title="List"
+              icon={TabIcon}
+              component={Src.Scenes.Main}
+            />
+            <Scene key="main" initial={true}
+              // hideNavBar={true}
+              title="Actions"
+              icon={TabIcon}
+              component={Src.Scenes.Main}
+            />
+          </Scene>
         </Scene>
       </Scene>
     </Router>
