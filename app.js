@@ -22,8 +22,8 @@ class MemberCards extends Component {
     return <Router
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
       <Scene key="root">
+        <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
         <Scene key="drawer" type={ActionConst.REPLACE} hideNavBar={false} component={Drawer} open={false}>
-          <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
           <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
             <Scene key="main" initial={true}
               // hideNavBar={true}
