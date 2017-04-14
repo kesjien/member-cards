@@ -47,7 +47,7 @@ export default class extends Component {
   }
 }
 const defaults = {
-  backgroundColor: '#F2F2F2'
+  backgroundColor: '#3F95EA'
 }
 const styles = {
   main: {
@@ -58,7 +58,7 @@ const styles = {
     backgroundColor: 'transparent'
   },
   burgerWrapper: {
-    backgroundColor: 'rgb(59,65, 73)',
+    backgroundColor: '#3F95EA',
     height: 55,
     alignSelf: 'stretch'
   },

@@ -18,8 +18,8 @@ export default class Card extends Component {
     return (
       <TouchableWithoutFeedback onPress={this.setFullCardVisible}>
         <View>
-          <View style={[this.stylesCard, {opacity:0.6,width: 0.9 * this.props.width, 
-            height: 0.85 * this.props.height, marginTop: 40, marginBottom: 40,
+          <View style={[this.stylesCard, {opacity: 0.8,width: 0.9 * this.props.width, 
+            height: 0.85 * this.props.height, marginTop: 100, marginBottom: 40,
             borderRadius: 8,  borderWidth: 1.5, borderColor: '#d6d7da', backgroundColor: '#fff'}]}>
               <View style={styles.mainContainer}>
                 <View>
@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     margin: 20,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: "#FFFFFF"
   },
   name: {
     flex: 0.4
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2
   },
   title: {
-    marginTop: 40
+    marginTop: 0
   },
   body: {
     marginTop: 20

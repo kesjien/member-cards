@@ -18,7 +18,11 @@ class TabIcon extends React.Component {
     }
 }
 class MemberCards extends Component {
-  render() {
+    render() {
+      const drawerSceneDefaultProps = {
+        // titleImage: require('./images/logo.png'),
+        navBar: NavBar
+    };
     return <Router
       panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
       <Scene key="root">
@@ -26,18 +30,21 @@ class MemberCards extends Component {
         <Scene key="drawer" type={ActionConst.REPLACE} hideNavBar={false} component={Drawer} open={false}>
           <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
             <Scene key="main" initial={true}
+              {...drawerSceneDefaultProps}
               // hideNavBar={true}
               title="Main"
               icon={TabIcon}
               component={Src.Scenes.Main}
             />
             <Scene key="main" initial={true}
+              {...drawerSceneDefaultProps}
               // hideNavBar={true}
               title="List"
               icon={TabIcon}
               component={Src.Scenes.Main}
             />
             <Scene key="main" initial={true}
+              {...drawerSceneDefaultProps}
               // hideNavBar={true}
               title="Actions"
               icon={TabIcon}
