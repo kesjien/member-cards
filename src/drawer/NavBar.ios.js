@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { Image, View, TouchableWithoutFeedback, Text } from 'react-native';
 import vDimensions, { vw, vh } from '../utils/vDimensions';
+import Icon from 'react-native-vector-icons/Entypo';
 
 export default class extends Component {
   static contextTypes = {
@@ -19,33 +20,21 @@ export default class extends Component {
       <View style={styles.main}>
       <View style={styles.avoidStatusBar}>
         <TouchableWithoutFeedback onPress={this.context.drawer.toggle}>
-          <View style={styles.burgerWrapper}>
-            <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 8, paddingTop: 7, backgroundColor: '#333' }}>
-              <View style={{ 
-                flexDirection: 'column', 
-                justifyContent: 'center', 
-                alignItems: 'center', 
-                flex: 1,  
-                borderRadius: 25, 
-                backgroundColor: '#F2F2F2',
-                opacity: 0.8 }}> 
-              <View style={{ height:12, justifyContent: 'space-around' }}>
-                <View style={{ height: 3, width: 20, backgroundColor: "#333"}}></View>
-                <View style={{ height: 3, width: 20, backgroundColor: "#333"}}></View>
-                <View style={{ height: 3, width: 20, backgroundColor: "#333"}}></View>
-              </View>
-              </View>
+            <View style={{padding: 8, paddingTop: 7 }}>
+              
+              <Icon style={{ fontSize: 20, color: "#FFFFFF" }} name="unread" />
             </View>
-          </View>
         </TouchableWithoutFeedback>
-
-        <View style={styles.logoWrapper}>
-          <Image style={styles.logo} height={55} width={60} />
-        </View>
 
         <View style={styles.titleWrapper}>
           <Text style={styles.title} fontSize={7}>{this.props.title}</Text>
         </View>
+        <TouchableWithoutFeedback onPress={this.context.drawer.toggle}>
+            <View style={{ padding: 8, right: 0 }}>
+              
+              <Icon style={{ fontSize: 20, color: "#FFFFFF" }} name="documents" />
+            </View>
+        </TouchableWithoutFeedback>
       </View>
       </View>
     );
@@ -63,7 +52,6 @@ const styles = {
     backgroundColor: 'transparent'
   },
   burgerWrapper: {
-    backgroundColor: '#3F95EA',
     height: 35,
     alignSelf: 'stretch'
   },
@@ -76,12 +64,12 @@ const styles = {
   titleWrapper: {
     alignSelf: 'center',
     alignItems: 'center',
-    left: vw(20)
+    // left: vw(20)
   },
   avoidStatusBar: {
     marginTop: 20,
-    flex: 1,
     flexDirection: 'row',
+    justifyContent: 'space-between',
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(255, 255, 255, 0.6)',
   }
