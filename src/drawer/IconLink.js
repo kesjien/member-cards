@@ -14,25 +14,7 @@ export default class extends Component {
   render() {
     return (
       <TouchableOpacity style={styles.container} onPress={this.props.onPress} activeOpacity={0.8}>
-        <View style={this.props.active ? styles.item.active : styles.item.regular }>
-          <View style={styles.imageWrapper}>
-            <View renderToHardwareTextureAndroid={true} shouldRasterizeIOS={true} style={{width: vh(15), height: vh(15)}} >
-              <Image
-                resizeMethod={'scale'}
-                source={this.props.imageActive}
-                style={[styles.image, { opacity: +(this.props.active) }]} />
-              <Image
-                resizeMethod={'scale'}
-                source={this.props.image}
-                style={[styles.image, { opacity: +(!this.props.active) }]} />
-            </View>
-          </View>
-          {this.props.children && <Text
-            wrapperViewStyle={styles.wrapperView}
-            style={[styles.item.text75, { color: this.props.active ? '#5fcd16' : '#FFF'}]}>{this.props.children}
-          </Text>}
-          {this.props.component }
-        </View>
+       
       </TouchableOpacity>
     );
   }
