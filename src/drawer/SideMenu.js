@@ -113,7 +113,6 @@ const styles = {
     flex: 0.5,
     height: undefined,
     width: undefined,
-    // marginTop: 20,
     resizeMode: 'cover', // or 'stretch'
     backgroundColor:'transparent',
     justifyContent: 'center',
