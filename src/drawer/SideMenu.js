@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Linking, Platform } from 'react-native';
+import { View, Linking, Platform, Image } from 'react-native';
 import {Actions, ActionConst} from 'react-native-router-flux';
 
 import StyledLink from './StyledLink';
@@ -26,7 +26,7 @@ class IconView extends Component {
     const { t, active } = this.props;
     const LinkType = IconLink;
     const elStyles = {
-      mainView: { flex: 1, flexDirection: 'column', backgroundColor: '#333'},
+      mainView: { flex: 1, flexDirection: 'column', backgroundColor: 'transparent'},
       rowView: { flexDirection:'row', height: vh(20) },
       contactsView: { paddingTop: 12, borderTopWidth: 1, borderTopColor: "#5c5c5c" }
     }
@@ -101,6 +101,7 @@ export default class extends Component {
 
     return (
       <View style={styles.sideMenuMain}>
+      <Image source={require('../../static/images/drawerImage.jpg')} style={styles.backgroundImage} />
         <CustomView {...this.props} />
       </View>
     );
@@ -108,6 +109,16 @@ export default class extends Component {
 }
 
 const styles = {
+  backgroundImage: {
+    flex: 0.5,
+    height: undefined,
+    width: undefined,
+    // marginTop: 20,
+    resizeMode: 'cover', // or 'stretch'
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   sideMenuMain: {
     marginTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
