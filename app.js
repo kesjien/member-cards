@@ -12,48 +12,42 @@ import NavBar from './src/drawer/NavBar';
 import { Scene, Router, TabBar, Modal, Schema, Actions, Reducer, ActionConst } from 'react-native-router-flux'
 class TabIcon extends React.Component {
     render(){
-        return (
-            <Text style={{color: this.props.selected ? '#3F95EA' :'black'}}>{this.props.title}</Text>
-        );
+        return null
     }
 }
 class MemberCards extends Component {
     render() {
       const drawerSceneDefaultProps = {
-        // titleImage: require('./images/logo.png'),
         navBar: NavBar
-    };
-    return <Router
-      panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
-      <Scene key="root">
-        <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
-        <Scene key="drawer" type={ActionConst.REPLACE} hideNavBar={false} component={Drawer} open={false}>
-          <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
-            <Scene key="main" initial={true}
-              {...drawerSceneDefaultProps}
-              // hideNavBar={true}
-              title="Main"
-              icon={TabIcon}
-              component={Src.Scenes.Main}
-            />
-            <Scene key="main" initial={true}
-              {...drawerSceneDefaultProps}
-              // hideNavBar={true}
-              title="List"
-              icon={TabIcon}
-              component={Src.Scenes.Main}
-            />
-            <Scene key="main" initial={true}
-              {...drawerSceneDefaultProps}
-              // hideNavBar={true}
-              title="Actions"
-              icon={TabIcon}
-              component={Src.Scenes.Main}
-            />
+      };
+      return <Router
+        panHandlers={ ( Platform.OS === 'ios' ) ? undefined : null }>
+        <Scene key="root">
+          <Scene hideNavBar={true} key="login" initial={false} type="transitionToTop" component={Src.Scenes.Login} title="Login"></Scene>
+          <Scene key="drawer" type={ActionConst.REPLACE} hideNavBar={false} component={Drawer} open={false}>
+            <Scene key="tabbar" style={{backgroundColor: 'transparent'}} tabs={true}>
+              <Scene key="main" initial={true}
+                {...drawerSceneDefaultProps}
+                title="Main"
+                icon={TabIcon}
+                component={Src.Scenes.Main}
+              />
+              <Scene key="main" initial={true}
+                {...drawerSceneDefaultProps}
+                title="List"
+                icon={TabIcon}
+                component={Src.Scenes.Main}
+              />
+              <Scene key="main" initial={true}
+                {...drawerSceneDefaultProps}
+                title="Actions"
+                icon={TabIcon}
+                component={Src.Scenes.Main}
+              />
+            </Scene>
           </Scene>
         </Scene>
-      </Scene>
-    </Router>
+      </Router>
   }
 }
 

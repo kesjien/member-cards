@@ -110,7 +110,7 @@ export default class extends Component {
 
 const styles = {
   backgroundImage: {
-    flex: 0.5,
+    flex: 0.4,
     height: undefined,
     width: undefined,
     resizeMode: 'cover',
@@ -119,9 +119,8 @@ const styles = {
     alignItems: 'center',
   },
   sideMenuMain: {
-    marginTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
-    backgroundColor: '#333'
+    backgroundColor: "rgb(20,20,24)"
   },
   versioningText: {
     flex: 1,

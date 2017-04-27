@@ -22,9 +22,7 @@ export default class extends Component {
 
 
 const styles = {
-  image: { width: vh(15), height: vh(15), position: 'absolute', overflow: 'hidden', resizeMode: 'cover' },
-  imageWrapper: { alignItems: 'center', },
-  wrapperView: { justifyContent: 'center', alignItems: 'center' },
+
   container : {
     borderWidth: 0.5,
     borderColor: '#5c5c5c',
@@ -32,33 +30,5 @@ const styles = {
     flex: 1,
     alignItems: 'stretch',
   },
-  item : {
-    text75: {
-      textAlign: 'center',
-      fontSize: normalize(6),
-      margin: 1,
-      color: '#fff'
-    },
-    regular: {
-      borderBottomWidth: 3.5,
-      borderBottomWidth: 3,
-      borderBottomColor: '#333',
-      justifyContent: 'center',
-      alignItems: 'center',
-      paddingTop: vh(3.5),
-      paddingBottom: vh(3.5),
-      flex: 1,
-      backgroundColor: '#333'
-    },
-    active: {
-      borderBottomWidth: 3,
-      borderBottomColor: '#5fcd16',
-      backgroundColor: '#424242',
-      justifyContent:'center',
-      alignItems: 'center',
-      paddingTop: vh(3.5),
-      paddingBottom: vh(3.5),
-      flex: 1
-    }
-  }
+
 }
