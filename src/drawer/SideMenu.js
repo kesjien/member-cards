@@ -24,10 +24,9 @@ class IconView extends Component {
 
   render( ) {
     const { t, active } = this.props;
-    const LinkType = IconLink;
     const elStyles = {
       mainView: { flex: 1, flexDirection: 'column', backgroundColor: 'transparent'},
-      rowView: { flexDirection:'row', height: vh(20) },
+      rowView: { flexDirection:'row', height: vh(20), backgroundColor:"rgb(19,10,3)" },
       contactsView: { paddingTop: 12, borderTopWidth: 1, borderTopColor: "#5c5c5c" }
     }
     const textProps = { allowTextScaling: false };
@@ -35,57 +34,57 @@ class IconView extends Component {
       <View style={elStyles.mainView}>
 
         <View style={elStyles.rowView}>
-          <LinkType
+          <IconLink
             onPress={() => this.onItemPress('dashboard')}
             image={require('./../../static/images/menu/menu_1.png')}
             imageActive={require('./../../static/images/menu/active/menu_1.png')}
             active={ active === 'dashboard'}>
             {'Pensionsoverblikket'}
-          </LinkType>
-          <LinkType
+          </IconLink>
+          <IconLink
             onPress={() => this.onItemPress('epension')}
             imageScale={1.5}
             image={require('./../../static/images/menu/menu_2.png')}
             imageActive={require('./../../static/images/menu/active/menu_2.png')}
             active={ active === 'epension'}>
             {'e-Pensionstjek'}
-          </LinkType>
+          </IconLink>
         </View>
 
         <View style={elStyles.rowView}>
-          <LinkType
+          <IconLink
             onPress={() => this.onItemPress('savings')}            
             image={require('./../../static/images/menu/menu_3.png')}
             imageActive={require('./../../static/images/menu/active/menu_3.png')}
             active={ active === 'savings'}>
             {'Opsparing & forsikringer'}
-          </LinkType>
+          </IconLink>
 
-          <LinkType
+          <IconLink
             onPress={() => this.onItemPress('documents')}
             image={require('./../../static/images/menu/menu_4.png')}
             imageActive={require('./../../static/images/menu/active/menu_4.png')}
             active={ active === 'documents'}>
             {'Dokumenter'}
-          </LinkType>
+          </IconLink>
         </View>
 
         <View style={elStyles.rowView}>
-          <LinkType
+          <IconLink
             onPress={() => this.onItemPress('settings')}
             image={require('./../../static/images/menu/menu_5.png')}
             imageActive={require('./../../static/images/menu/active/menu_5.png')}
             active={ active === 'settings'}>
             {'Personlige oplysninger'}
-          </LinkType>
+          </IconLink>
 
-          <LinkType
+          <IconLink
             onPress={() => this.onItemPress('contacts')}        
             image={require('./../../static/images/menu/menu_6.png')}
             imageActive={require('./../../static/images/menu/active/menu_6.png')}
             active={active === 'contacts'}>
             {'Kontakt os'}
-          </LinkType>
+          </IconLink>
         </View>
 
       </View>
@@ -110,7 +109,7 @@ export default class extends Component {
 
 const styles = {
   backgroundImage: {
-    flex: 0.4,
+    flex: 0.3,
     height: undefined,
     width: undefined,
     resizeMode: 'cover',
@@ -120,24 +119,6 @@ const styles = {
   },
   sideMenuMain: {
     flex: 1,
-    backgroundColor: "rgb(20,20,24)"
-  },
-  versioningText: {
-    flex: 1,
-    margin: 25,
-    color: "#fff",
-    fontSize: normalize(5),
-  },
-  item : {
-    text: {
-      marginTop: vDimensions(1, 'vh'),
-      marginBottom: vDimensions(1, 'vh'),
-      color: '#fff',
-    }
-  },
-  listContactsView : {
-    paddingLeft: 0,
-    justifyContent:'center',
-    backgroundColor: '#333',
+    backgroundColor: "rgb(26,11,0)"
   }
 };

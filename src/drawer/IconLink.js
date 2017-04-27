@@ -25,7 +25,7 @@ const styles = {
 
   container : {
     borderWidth: 0.5,
-    borderColor: '#5c5c5c',
+    borderColor: 'rgba(240,220,152, 0.1)',
     flexDirection: 'column',
     flex: 1,
     alignItems: 'stretch',
