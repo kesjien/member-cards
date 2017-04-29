@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Image,TouchableHighlight, TouchableWithoutFeedback, View, StyleSheet, Text, Icon } from 'react-native';
 import FullCard from './FullCard';
-// import styles from './styles';
 export default class Card extends Component {
   constructor() {
     super();

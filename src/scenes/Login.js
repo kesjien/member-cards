@@ -45,7 +45,6 @@ class Login extends Component {
         console.log(err);
         return;
       }
-      // Authentication worked!
       Actions.drawer();
     });
     return (
@@ -60,7 +59,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: undefined,
     width: undefined,
-    // marginTop: 20,
     resizeMode: 'cover', // or 'stretch'
     backgroundColor:'transparent',
     justifyContent: 'center',

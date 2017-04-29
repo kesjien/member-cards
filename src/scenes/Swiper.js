@@ -177,7 +177,6 @@ class SwipeCards extends Component {
                       <Card
                         width={width}
                         height={height}
-                        // data={this.state.card}
                         isLiked={this.isLiked}
                         isMoved={this.isMoved}
                       >{this.state.card}</Card>
