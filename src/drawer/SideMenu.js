@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Linking, Platform, Image } from 'react-native';
 import {Actions, ActionConst} from 'react-native-router-flux';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 import StyledLink from './StyledLink';
 import IconLink from './IconLink';
 import normalize from '../utils/normalizeFont';
@@ -34,12 +34,8 @@ class IconView extends Component {
       <View style={elStyles.mainView}>
 
         <View style={elStyles.rowView}>
-          <IconLink
-            onPress={() => this.onItemPress('dashboard')}
-            image={require('./../../static/images/menu/menu_1.png')}
-            imageActive={require('./../../static/images/menu/active/menu_1.png')}
-            active={ active === 'dashboard'}>
-            {'Pensionsoverblikket'}
+          <IconLink>
+            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-albums-outline" />
           </IconLink>
           <IconLink
             onPress={() => this.onItemPress('epension')}
@@ -47,7 +43,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_2.png')}
             imageActive={require('./../../static/images/menu/active/menu_2.png')}
             active={ active === 'epension'}>
-            {'e-Pensionstjek'}
+            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-add-circle-outline" />
           </IconLink>
         </View>
 
@@ -57,7 +53,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_3.png')}
             imageActive={require('./../../static/images/menu/active/menu_3.png')}
             active={ active === 'savings'}>
-            {'Opsparing & forsikringer'}
+            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-list-outline" />
           </IconLink>
 
           <IconLink
@@ -65,7 +61,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_4.png')}
             imageActive={require('./../../static/images/menu/active/menu_4.png')}
             active={ active === 'documents'}>
-            {'Dokumenter'}
+            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-school-outline" />
           </IconLink>
         </View>
 
@@ -75,7 +71,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_5.png')}
             imageActive={require('./../../static/images/menu/active/menu_5.png')}
             active={ active === 'settings'}>
-            {'Personlige oplysninger'}
+            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-settings-outline" />
           </IconLink>
 
           <IconLink
@@ -83,7 +79,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_6.png')}
             imageActive={require('./../../static/images/menu/active/menu_6.png')}
             active={active === 'contacts'}>
-            {'Kontakt os'}
+            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-log-out-outline" />
           </IconLink>
         </View>
 
