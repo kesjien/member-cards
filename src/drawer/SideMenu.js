@@ -35,15 +35,10 @@ class IconView extends Component {
 
         <View style={elStyles.rowView}>
           <IconLink>
-            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-albums-outline" />
+            <Icon style={styles.iconStyle} name="ios-albums-outline" />
           </IconLink>
-          <IconLink
-            onPress={() => this.onItemPress('epension')}
-            imageScale={1.5}
-            image={require('./../../static/images/menu/menu_2.png')}
-            imageActive={require('./../../static/images/menu/active/menu_2.png')}
-            active={ active === 'epension'}>
-            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-add-circle-outline" />
+          <IconLink>
+            <Icon style={styles.iconStyle} name="ios-add-circle-outline" />
           </IconLink>
         </View>
 
@@ -53,7 +48,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_3.png')}
             imageActive={require('./../../static/images/menu/active/menu_3.png')}
             active={ active === 'savings'}>
-            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-list-outline" />
+            <Icon style={styles.iconStyle} name="ios-list-outline" />
           </IconLink>
 
           <IconLink
@@ -61,7 +56,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_4.png')}
             imageActive={require('./../../static/images/menu/active/menu_4.png')}
             active={ active === 'documents'}>
-            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-school-outline" />
+            <Icon style={styles.iconStyle} name="ios-school-outline" />
           </IconLink>
         </View>
 
@@ -71,7 +66,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_5.png')}
             imageActive={require('./../../static/images/menu/active/menu_5.png')}
             active={ active === 'settings'}>
-            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-settings-outline" />
+            <Icon style={styles.iconStyle} name="ios-settings-outline" />
           </IconLink>
 
           <IconLink
@@ -79,7 +74,7 @@ class IconView extends Component {
             image={require('./../../static/images/menu/menu_6.png')}
             imageActive={require('./../../static/images/menu/active/menu_6.png')}
             active={active === 'contacts'}>
-            <Icon style={{ fontSize: 30, color: "rgba(241,239,236, 1)" }} name="ios-log-out-outline" />
+            <Icon style={styles.iconStyle} name="ios-log-out-outline" />
           </IconLink>
         </View>
 
@@ -116,5 +111,9 @@ const styles = {
   sideMenuMain: {
     flex: 1,
     backgroundColor: "rgb(26,11,0)"
+  },
+  iconStyle: {
+    fontSize: 30, 
+    color: "rgba(241,239,236, 1)"
   }
 };

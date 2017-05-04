@@ -32,18 +32,6 @@ class MemberCards extends Component {
                 icon={TabIcon}
                 component={Src.Scenes.Main}
               />
-              <Scene key="main" initial={true}
-                {...drawerSceneDefaultProps}
-                title="List"
-                icon={TabIcon}
-                component={Src.Scenes.Main}
-              />
-              <Scene key="main" initial={true}
-                {...drawerSceneDefaultProps}
-                title="Actions"
-                icon={TabIcon}
-                component={Src.Scenes.Main}
-              />
             </Scene>
           </Scene>
         </Scene>

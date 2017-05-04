@@ -1,6 +1,7 @@
 import * as constants from '../actions/post.js';
 
 const posts = (state = { posts: [] }, action) => {
+
     switch (action.type) {
         case constants.FETCH_POST:
             return {

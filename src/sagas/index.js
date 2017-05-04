@@ -12,6 +12,7 @@ function* fetchPosts() {
         yield put(actions.postsReceived(posts));
     }
     catch (error) {
+        alert('4')
         yield put(actions.fetchPostsFailed(error));
     }
 }
